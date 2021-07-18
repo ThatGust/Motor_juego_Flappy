@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "SplashState.h"
 
 namespace Flappy {
 	Game::Game(int width, int height, string title)
@@ -7,7 +8,7 @@ namespace Flappy {
 			title, Style::Close | Style::Titlebar);
 		//Aqui menu del juego
 		//Error despues de compilar
-
+		_data->machine.AddState(StateRef(new SplashState(this->_data)));
 
 
 		//*
