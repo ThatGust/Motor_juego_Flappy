@@ -3,18 +3,17 @@
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
-using namespace std;
+//using namespace std;
 
 namespace Flappy {
 	class InputManager
 	{
 	public:
-		InputManager();
-		~InputManager();
+		InputManager() {}
+		~InputManager() {}
 
-		bool IsSpriteClicked(Sprite object, Mouse::Button button, RenderWindow& window);
+		bool IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window);
 		Vector2i GetMousePosition(RenderWindow& window);
 	};
 
 }
-

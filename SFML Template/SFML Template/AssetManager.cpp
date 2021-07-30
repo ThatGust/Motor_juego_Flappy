@@ -15,7 +15,7 @@ namespace Flappy {
 
 	void AssetManager::LoadFont(string name, string fileName) {
 		Font font;
-		if ( font.loadFromFile(fileName))
+		if (font.loadFromFile(fileName))
 		{
 			this->_fonts[name] = font;
 		}
@@ -26,4 +26,4 @@ namespace Flappy {
 	}
 
 
- }
+}

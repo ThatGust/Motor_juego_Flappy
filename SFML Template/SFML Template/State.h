@@ -1,5 +1,4 @@
 #pragma once
-
 namespace Flappy
 {
 	class State
@@ -14,9 +13,9 @@ namespace Flappy
 		//Dibuja despues de actualizar, dt = determina los frames 
 		virtual void Draw(float dt) = 0;
 		//pausa el juego
-		virtual void Pause();
+		virtual void Pause() {}
 		//Resume el juego
-		virtual void Resume();
-		
+		virtual void Resume() {}
+
 	};
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <sstream>
 #include "SplashState.h"
+#include "MainMenuState.h"
 #include "DEFINITIONS.h"
 
 #include <iostream>
@@ -34,16 +35,17 @@ namespace Flappy
 		if (this->_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 		{
 			// Switch To Main Menu
-			cout << "Go to main menu" << endl;
+			//cout << "Go to main menu" << endl;
+			this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
 		}
 	}
 
 	void SplashState::Draw(float dt)
 	{
-		_data->window.clear();
+		this->_data->window.clear(sf::Color::Red);
 
-		_data->window.draw(_background);
+		this->_data->window.draw(this->_background);
 
-		_data->window.display();
+		this->_data->window.display();
 	}
 }

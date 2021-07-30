@@ -1,20 +1,21 @@
+#pragma once
 #include "InputManager.h"
 
 namespace Flappy {
 
-	bool InputManager::IsSpriteClicked(Sprite object, Mouse::Button button, RenderWindow& window) {
-		if (Mouse::isButtonPressed(button))
+
+	bool InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window)
+	{
+		if (sf::Mouse::isButtonPressed(button))
 		{
-			IntRect tempRect(object.getPosition().x,
-				object.getPosition().y, object.getGlobalBounds(
-				).width, object.getGlobalBounds().height);
+			sf::IntRect playButtonRect(object.getPosition().x, object.getPosition().y, object.getGlobalBounds().width, object.getGlobalBounds().height);
 
-
-			if (tempRect.contains(Mouse::getPosition(window)))
+			if (playButtonRect.contains(sf::Mouse::getPosition(window)))
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

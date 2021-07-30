@@ -7,7 +7,7 @@ namespace Flappy
 	void StateMachine::AddState(StateRef newState, bool isReplacing) {
 		this->_isAdding = true;
 		this->_isReplacing = isReplacing;
-		this->_newState = move(newState);
+		this->_newState = std::move(newState);
 	}
 
 
@@ -18,10 +18,11 @@ namespace Flappy
 
 
 	//Procesador 
+
 	void StateMachine::ProcessStateChanges() {
 		if (this->_isRemoving && !this->_states.empty())
 		{
-			this->_states.pop();
+			//this->_states.pop();
 			if (!this->_states.empty())
 			{
 				//Pone arriba el estado 
@@ -47,6 +48,7 @@ namespace Flappy
 			this->_isAdding = false;
 		}
 	}
+	
 	StateRef& StateMachine::GetActiveState() {
 		return this->_states.top();
 	}

@@ -1,10 +1,8 @@
-#include <iostream>
 #include "Game.h"
-
-
-
-int main() {
-	Flappy::Game(800, 600, "Iniciador de SFML");
+#include "DEFINITIONS.h"
+int main()
+{
+	Flappy::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Flappy virus");
 
 	return EXIT_SUCCESS;
 }

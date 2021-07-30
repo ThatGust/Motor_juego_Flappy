@@ -12,8 +12,8 @@ namespace Flappy {
 	class AssetManager
 	{
 	public:
-		AssetManager();
-		~AssetManager();
+		AssetManager() {};
+		~AssetManager() {};
 
 		void LoadTexture(string name, string fileName);
 		Texture& GetTexture(string name);
