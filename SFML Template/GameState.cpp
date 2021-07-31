@@ -52,7 +52,10 @@ namespace Flappy
 		land->MoveLand( dt);
 
 		//pipes con frecuencia
-		if (clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FRECUENCY) {
+		if (clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FRECUENCY) 
+		{
+			pipe->RandomisePipeOffset();
+			
 			pipe->SpawnInvisiblePipe();
 			pipe->SpawnBottomPipe();
 			pipe->SpawnTopPipe();

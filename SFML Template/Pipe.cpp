@@ -1,21 +1,24 @@
 #include "Pipe.h"
 #include <iostream>
+
 namespace Flappy 
 {
-	Pipe::Pipe(GameDataRef data) :_data(data) {}
+	Pipe::Pipe(GameDataRef data) :_data(data) 
+	{
+		_landHeight = data->assets.GetTexture( "Land" ).getSize().y;
+		_pipeSpawnYOffset = 0;
+	}
 	
 	void Pipe::SpawnBottomPipe() {
 		Sprite sprite(_data->assets.GetTexture("Pipe Up"));
-		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height);
+		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
 
 		pipeSprites.push_back(sprite);
 	}
 
-
-
 	void Pipe::SpawnTopPipe() {
 		Sprite sprite(_data->assets.GetTexture("Pipe Down"));
-		sprite.setPosition(_data->window.getSize().x, 0);
+		sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset);
 
 		pipeSprites.push_back(sprite);
 	}
@@ -30,7 +33,8 @@ namespace Flappy
 		pipeSprites.push_back(sprite);
 	}
 	void Pipe::MovePipes(float dt) {
-		for (unsigned short int i = 0; i < pipeSprites.size(); i++) {
+		for (unsigned short int i = 0; i < pipeSprites.size(); i++) 
+		{
 			//sf::Vector2f position = pipeSprites.at(i).getPosition();
 			if (pipeSprites.at(i).getPosition().x < 0 - pipeSprites.at(i).getGlobalBounds().width) {
 				pipeSprites.erase(pipeSprites.begin() + i);
@@ -46,8 +50,14 @@ namespace Flappy
 	}
 
 	void Pipe::DrawPipes() {
-		for (unsigned short int i = 0; i < pipeSprites.size(); i++) {
-			_data->window.draw(pipeSprites.at(i));
+		for (unsigned short int i = 0; i < pipeSprites.size(); i++) 
+		{
+			_data->window.draw( pipeSprites.at(i) );
 		}
+	}
+
+	void Pipe::RandomisePipeOffset( )
+	{
+		_pipeSpawnYOffset = rand( ) % ( _landHeight + 1 );
 	}
 }
