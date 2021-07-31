@@ -1,6 +1,7 @@
 #include "Pipe.h"
 #include <iostream>
-namespace Flappy {
+namespace Flappy 
+{
 	Pipe::Pipe(GameDataRef data) :_data(data) {}
 	
 	void Pipe::SpawnBottomPipe() {
@@ -41,7 +42,7 @@ namespace Flappy {
 			}
 			
 		}
-		std::cout << pipeSprites.size() << std::endl;
+		std::cout << pipeSprites.size() << std::endl; // print in console
 	}
 
 	void Pipe::DrawPipes() {

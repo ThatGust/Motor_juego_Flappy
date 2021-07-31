@@ -3,6 +3,8 @@
 #include "State.h"
 #include "Game.h"
 #include "Pipe.h"
+#include "Land.h"
+
 namespace Flappy
 {
 	class GameState : public State
@@ -20,7 +22,9 @@ namespace Flappy
 		GameDataRef _data;
 
 		Sprite _background;
+		
 		Pipe *pipe;
+		Land *land; 
 		sf::Clock clock;
 	};
 }

@@ -12,16 +12,17 @@ namespace Flappy
 	void GameState::Init()
 	{
 		cout << "Game State wiiiii" << endl;
+
+
 		_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
-
-		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
-
-		//pipes
-		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
+		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+		_data->assets.LoadTexture("Land", LAND_FILEPATH);
 
 		pipe = new Pipe(_data);
+		land = new Land(_data);
 
+		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
 
 	void GameState::HandleInput()
@@ -48,6 +49,8 @@ namespace Flappy
 	void GameState::Update(float dt)
 	{
 		pipe->MovePipes(dt);
+		land->MoveLand( dt);
+
 		//pipes con frecuencia
 		if (clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FRECUENCY) {
 			pipe->SpawnInvisiblePipe();
@@ -65,7 +68,8 @@ namespace Flappy
 		this->_data->window.draw(this->_background);
 
 		pipe->DrawPipes();
-
+		land->DrawLand();
+		
 		this->_data->window.display();
 	}
 }

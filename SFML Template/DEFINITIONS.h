@@ -13,8 +13,10 @@
 #define GAME_TITLE_FILEPATH "title.png"
 #define PLAY_BUTTON_FILEPATH "PlayButton.png"
 
-
 #define PIPE_UP_FILEPATH "PipeUp.png"
 #define PIPE_DOWN_FILEPATH "PipeDown.png"
+   
+#define LAND_FILEPATH "Land.png"
+
 #define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FRECUENCY 0.5f
