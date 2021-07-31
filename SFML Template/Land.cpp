@@ -1,15 +1,16 @@
 #include "Land.h"
 #include "DEFINITIONS.h"
+#include <iostream>
 
 namespace Flappy
 {
     Land::Land(GameDataRef data) : _data(data)
     {
-        sf::Sprite sprite( _data->assets.GetTexture("Land") );
-        sf::Sprite sprite2( _data->assets.GetTexture("Land") );
+        sf::Sprite sprite( _data->assets.GetTexture( "Land" ) );
+        sf::Sprite sprite2( _data->assets.GetTexture( "Land" ) );
 
         sprite.setPosition(0, _data->window.getSize( ).y - sprite.getGlobalBounds( ).height );
-        sprite.setPosition(sprite.getGlobalBounds().width, _data->window.getSize( ).y - sprite.getGlobalBounds( ).height );
+        sprite2.setPosition(sprite.getGlobalBounds().width, _data->window.getSize( ).y - sprite.getGlobalBounds( ).height );
 
         _landSprites.push_back( sprite );
         _landSprites.push_back( sprite2 );
@@ -34,7 +35,7 @@ namespace Flappy
     {
         for ( unsigned short int i = 0; i < _landSprites.size(); i++)
         {
-            _data->window.draw( _landSprites.at( 1 ));
+            _data->window.draw( _landSprites.at( i ));
         }
     }
 
