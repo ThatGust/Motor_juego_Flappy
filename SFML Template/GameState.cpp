@@ -18,9 +18,11 @@ namespace Flappy
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
 		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 		_data->assets.LoadTexture("Land", LAND_FILEPATH);
+		_data->assets.LoadTexture("Virus Frame 1", VIRUS_FRAME_1_FILEPATH );
 
 		pipe = new Pipe(_data);
 		land = new Land(_data);
+		virus = new Virus(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
@@ -72,6 +74,7 @@ namespace Flappy
 
 		pipe->DrawPipes();
 		land->DrawLand();
+		virus->Draw( );
 		
 		this->_data->window.display();
 	}

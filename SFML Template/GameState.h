@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "Pipe.h"
 #include "Land.h"
+#include "Virus.h"
 
 namespace Flappy
 {
@@ -25,6 +26,8 @@ namespace Flappy
 		
 		Pipe *pipe;
 		Land *land; 
+		Virus *virus;
+
 		sf::Clock clock;
 	};
 }

@@ -1,9 +1,15 @@
 #include "Game.h"
 #include "SplashState.h"
 
-namespace Flappy {
+#include <stdlib.h>
+#include <time.h>
+
+namespace Flappy 
+{
 	Game::Game(int width, int height, string title)
 	{
+		srand(time(NULL));
+		
 		_data->window.create(VideoMode(width, height),
 			title, Style::Close | Style::Titlebar);
 		//Aqui menu del juego

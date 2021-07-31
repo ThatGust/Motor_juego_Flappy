@@ -18,6 +18,11 @@
    
 #define LAND_FILEPATH "Land.png"
 
+#define VIRUS_FRAME_1_FILEPATH "virus_01.png"
+#define VIRUS_FRAME_2_FILEPATH "virus_02.png"
+#define VIRUS_FRAME_3_FILEPATH "virus_03.png"
+#define VIRUS_FRAME_4_FILEPATH "virus_04.png"
+
 #define PIPE_MOVEMENT_SPEED 200.0f
-#define PIPE_SPAWN_FRECUENCY 2.0f
-// #define PIPE_SPAWN_FRECUENCY 0.5f
+#define PIPE_SPAWN_FRECUENCY 0.5f
+// #define PIPE_SPAWN_FRECUENCY 2.0f
