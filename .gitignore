@@ -2,3 +2,5 @@
 SFML Template/*.o
 SFML Template/app
 .vscode/settings.json
+SFML Template/Landx2.png
+SFML Template/res/img/Landx2.png
