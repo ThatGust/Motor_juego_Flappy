@@ -60,4 +60,10 @@ namespace Flappy
 	{
 		_pipeSpawnYOffset = rand( ) % ( _landHeight + 1 );
 	}
+
+	const std::vector<sf::Sprite> &Pipe::GetSprites( ) const
+	{
+		return pipeSprites;
+	}
+
 }

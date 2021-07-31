@@ -24,8 +24,7 @@
 #define VIRUS_FRAME_4_FILEPATH "virus_04.png"
 
 #define PIPE_MOVEMENT_SPEED 200.0f
-#define PIPE_SPAWN_FRECUENCY 0.5f
-// #define PIPE_SPAWN_FRECUENCY 2.0f
+#define PIPE_SPAWN_FRECUENCY 2.5f
 
 #define VIRUS_ANIMATION_DURATION 0.7f  // Variar para lograr una mejor animation
 
