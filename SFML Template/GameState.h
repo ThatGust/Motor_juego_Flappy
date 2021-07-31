@@ -5,6 +5,7 @@
 #include "Pipe.h"
 #include "Land.h"
 #include "Virus.h"
+#include "Collision.h"
 
 namespace Flappy
 {
@@ -27,7 +28,10 @@ namespace Flappy
 		Pipe *pipe;
 		Land *land; 
 		Virus *virus;
+		Collision *collision;
 
 		sf::Clock clock;
+
+		int _gameState;
 	};
 }

@@ -28,6 +28,8 @@ namespace Flappy
 		virus = new Virus(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+
+		_gameState = GameStates::eReady;
 	}
 
 	void GameState::HandleInput()
@@ -49,30 +51,51 @@ namespace Flappy
 				// pipe->SpawnBottomPipe();
 				// pipe->SpawnTopPipe();
 
-				virus->Tap( );		// Mover el virus con clic de mouse
+				if ( GameStates::eGameOver != _gameState )
+				{
+					_gameState = GameStates::ePlaying;
+					virus->Tap( );		// Mover el virus con clic de mouse
+				}
 			}
 		}
 	}
 
 	void GameState::Update(float dt)
 	{
-		pipe->MovePipes(dt);
-		land->MoveLand( dt);
-
-		//pipes con frecuencia
-		if (clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FRECUENCY) 
+		if ( GameStates::eGameOver != _gameState )
 		{
-			pipe->RandomisePipeOffset();
-			
-			pipe->SpawnInvisiblePipe();
-			pipe->SpawnBottomPipe();
-			pipe->SpawnTopPipe();
+			virus->Animate( dt );
+			land->MoveLand( dt);
+		}
+		if ( GameStates::ePlaying == _gameState)
+		{
+			pipe->MovePipes(dt);
+			//pipes con frecuencia
+			if (clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FRECUENCY) 
+			{
+				pipe->RandomisePipeOffset();
+				
+				pipe->SpawnInvisiblePipe();
+				pipe->SpawnBottomPipe();
+				pipe->SpawnTopPipe();
 
-			clock.restart();
+				clock.restart();
+			}
+
+			virus->Update( dt );
+
+			std::vector<sf::Sprite> landSprites = land->GetSprites();
+
+			for (int i = 0; i < landSprites.size() ; i++) 
+			{
+				if (collision->CheckSpriteCollision( virus->GetSprite(), landSprites.at(i) ) )
+				{
+					_gameState = GameStates::eGameOver;
+				}
+			}
+
 		}
 
-		virus->Update( dt );
-		virus->Animate( dt );
 	}
 
 	void GameState::Draw(float dt)
@@ -83,7 +106,7 @@ namespace Flappy
 
 		pipe->DrawPipes();
 		land->DrawLand();
-		virus->Draw( );
+		virus->Draw();
 		
 		this->_data->window.display();
 	}

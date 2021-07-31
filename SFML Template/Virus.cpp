@@ -75,4 +75,10 @@ namespace Flappy
         _movementClock.restart();
         _virusState = VIRUS_STATE_FLAYING;
     }
+
+    const sf::Sprite &Virus::GetSprite( ) const
+    {
+        return _virusSprite;
+    }
+
 }

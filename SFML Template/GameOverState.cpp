@@ -11,7 +11,7 @@ namespace Flappy
 
 	void GameOverState::Init()
 	{
-		cout << "Game State wiiiii" << endl;
+		// cout << "Game State wiiiii" << endl;
 		_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));

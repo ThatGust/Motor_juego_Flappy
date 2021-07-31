@@ -1,3 +1,4 @@
 # Archivos generados al compilar con g++ en Linux
 SFML Template/*.o
 SFML Template/app
+.vscode/settings.json

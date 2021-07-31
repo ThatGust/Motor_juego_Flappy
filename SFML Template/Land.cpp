@@ -37,6 +37,12 @@ namespace Flappy
             _data->window.draw( _landSprites.at( 1 ));
         }
     }
+
+    const std::vector<sf::Sprite> &Land::GetSprites( ) const
+    {
+        return _landSprites;
+    }
+
 } 
 
 //  TO DO: REvisar la posicion del sprite land
