@@ -12,6 +12,9 @@ namespace Flappy
         _animationFrames.push_back( _data->assets.GetTexture( "Virus Frame 4" ) );
 
         _virusSprite.setTexture( _animationFrames.at(_animationIterator) );
+        _virusSprite.setPosition( (_data->window.getSize().x/4) - ( _virusSprite.getGlobalBounds().width/2),  (_data->window.getSize().y/2 ) - (_virusSprite.getLocalBounds().height/2) );
+
+        _virusState = VIRUS_STATE_STILL;
     }
 
     void Virus::Draw()
@@ -36,5 +39,29 @@ namespace Flappy
 
             _clock.restart();
         }
+    }
+
+    void Virus::Update ( float dt) 
+    {
+        if ( VIRUS_STATE_FALLING == _virusState )
+        {
+            _virusSprite.move(0, GRAVITY * dt );
+        }
+        else if ( VIRUS_STATE_FLAYING == _virusState )
+        {
+            _virusSprite.move( 0, -FLYING_SPEED * dt);
+        }
+
+        if (_movementClock.getElapsedTime().asSeconds() > FLYING_DURATION )
+        {
+            _movementClock.restart();
+            _virusState = VIRUS_STATE_FALLING;
+        }
+    }
+
+    void Virus::Tap ()
+    {
+        _movementClock.restart();
+        _virusState = VIRUS_STATE_FLAYING;
     }
 }

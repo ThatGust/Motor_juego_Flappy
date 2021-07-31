@@ -43,10 +43,13 @@ namespace Flappy
 
 			if (this->_data->input.IsSpriteClicked(this->_background, sf::Mouse::Left, this->_data->window))
 			{
-				pipe->SpawnInvisiblePipe();
-				pipe->SpawnBottomPipe();
-				pipe->SpawnTopPipe();
-				
+				// Estas 3 lineas ya no estan en el codigo que aparece en 
+				// el video 18, minuto 9:34
+				// pipe->SpawnInvisiblePipe();
+				// pipe->SpawnBottomPipe();
+				// pipe->SpawnTopPipe();
+
+				virus->Tap( );		// Mover el virus con clic de mouse
 			}
 		}
 	}
@@ -68,6 +71,7 @@ namespace Flappy
 			clock.restart();
 		}
 
+		virus->Update( dt );
 		virus->Animate( dt );
 	}
 
