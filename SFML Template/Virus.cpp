@@ -15,6 +15,11 @@ namespace Flappy
         _virusSprite.setPosition( (_data->window.getSize().x/4) - ( _virusSprite.getGlobalBounds().width/2),  (_data->window.getSize().y/2 ) - (_virusSprite.getLocalBounds().height/2) );
 
         _virusState = VIRUS_STATE_STILL;
+
+        sf::Vector2f origin = sf::Vector2f( _virusSprite.getGlobalBounds().width/2, _virusSprite.getGlobalBounds().height/2 );
+
+        _virusSprite.setOrigin (origin);
+        _rotation = 0;
     }
 
     void Virus::Draw()
@@ -46,6 +51,12 @@ namespace Flappy
         if ( VIRUS_STATE_FALLING == _virusState )
         {
             _virusSprite.move(0, GRAVITY * dt );
+            
+            _rotation += ROTATION_SPEED * dt;
+            if ( _rotation < -25.0f )
+            {
+                _rotation = -25.0f;
+            }
         }
         else if ( VIRUS_STATE_FLAYING == _virusState )
         {

@@ -29,5 +29,6 @@ namespace Flappy
         sf::Clock _movementClock;
 
         int _virusState;
+        float _rotation;
     };    
 }
