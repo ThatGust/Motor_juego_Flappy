@@ -19,6 +19,9 @@ namespace Flappy
 		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 		_data->assets.LoadTexture("Land", LAND_FILEPATH);
 		_data->assets.LoadTexture("Virus Frame 1", VIRUS_FRAME_1_FILEPATH );
+		_data->assets.LoadTexture("Virus Frame 2", VIRUS_FRAME_2_FILEPATH );
+		_data->assets.LoadTexture("Virus Frame 3", VIRUS_FRAME_3_FILEPATH );
+		_data->assets.LoadTexture("Virus Frame 4", VIRUS_FRAME_4_FILEPATH );
 
 		pipe = new Pipe(_data);
 		land = new Land(_data);
@@ -64,6 +67,8 @@ namespace Flappy
 
 			clock.restart();
 		}
+
+		virus->Animate( dt );
 	}
 
 	void GameState::Draw(float dt)
