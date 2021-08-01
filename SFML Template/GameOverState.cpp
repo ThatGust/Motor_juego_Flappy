@@ -41,7 +41,7 @@ namespace Flappy
 		_scoreText.setFont(_data->assets.GetFont("Flappy Font"));
 		_scoreText.setString(std::to_string(_score));
 		_scoreText.setCharacterSize(80);
-		_scoreText.setFillColor(sf::Color::Red);
+		_scoreText.setFillColor(sf::Color::White);
 
 		_scoreText.setOrigin(_scoreText.getGlobalBounds().width / 2, _scoreText
 			.getGlobalBounds().height / 2);

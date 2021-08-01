@@ -6,7 +6,7 @@
 #define SPLASH_STATE_SHOW_TIME 2.0
 
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "res/img/Splash Background.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "res/img/sky.png"
+#define MAIN_MENU_BACKGROUND_FILEPATH "res/img/sky1.png"
 #define GAME_BACKGROUND_FILEPATH "res/img/sky.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "res/img/sky.png"
 
