@@ -1,7 +1,6 @@
 #pragma once
 
 #include <map>
-
 #include "StateMachine.h"
 #include <SFML/Graphics.hpp>
 

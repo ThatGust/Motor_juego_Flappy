@@ -1,14 +1,14 @@
 #include "Pipe.h"
 #include <iostream>
 
-namespace Flappy 
+namespace Flappy
 {
-	Pipe::Pipe(GameDataRef data) :_data(data) 
+	Pipe::Pipe(GameDataRef data) :_data(data)
 	{
-		_landHeight = data->assets.GetTexture( "Land" ).getSize().y;
+		_landHeight = data->assets.GetTexture("Land").getSize().y;
 		_pipeSpawnYOffset = 0;
 	}
-	
+
 	void Pipe::SpawnBottomPipe() {
 		Sprite sprite(_data->assets.GetTexture("Pipe Up"));
 		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
@@ -32,8 +32,15 @@ namespace Flappy
 		sprite.setColor(Color(0, 0, 0, 0));
 		pipeSprites.push_back(sprite);
 	}
+
+	void Pipe::SpawnScoringPipe() {
+		Sprite sprite( _data->assets.GetTexture("Scoring Pipe"));
+		sprite.setPosition( _data->window.getSize().x, 0);
+		scoringPipes.push_back(sprite);
+	}
+
 	void Pipe::MovePipes(float dt) {
-		for (unsigned short int i = 0; i < pipeSprites.size(); i++) 
+		for (unsigned short int i = 0; i < pipeSprites.size(); i++)
 		{
 			//sf::Vector2f position = pipeSprites.at(i).getPosition();
 			if (pipeSprites.at(i).getPosition().x < 0 - pipeSprites.at(i).getGlobalBounds().width) {
@@ -44,26 +51,45 @@ namespace Flappy
 
 				pipeSprites.at(i).move(-movement, 0);
 			}
-			
+
 		}
-		std::cout << pipeSprites.size() << std::endl; // print in console
+
+		for (unsigned short int i = 0; i < scoringPipes.size(); i++)
+		{
+			//sf::Vector2f position = pipeSprites.at(i).getPosition();
+			if (scoringPipes.at(i).getPosition().x < 0 - scoringPipes.at(i).getGlobalBounds().width) {
+				scoringPipes.erase(scoringPipes.begin() + i);
+			} 
+			else {
+				float movement = PIPE_MOVEMENT_SPEED * dt;
+
+				scoringPipes.at(i).move(-movement, 0);
+			}
+
+		}
+		//std::cout << pipeSprites.size() << std::endl; // print in console
 	}
 
 	void Pipe::DrawPipes() {
-		for (unsigned short int i = 0; i < pipeSprites.size(); i++) 
+		for (unsigned short int i = 0; i < pipeSprites.size(); i++)
 		{
-			_data->window.draw( pipeSprites.at(i) );
+			_data->window.draw(pipeSprites.at(i));
 		}
 	}
 
-	void Pipe::RandomisePipeOffset( )
+	void Pipe::RandomisePipeOffset()
 	{
-		_pipeSpawnYOffset = rand( ) % ( _landHeight + 1 );
+		_pipeSpawnYOffset = rand() % (_landHeight + 1);
 	}
 
-	const std::vector<sf::Sprite> &Pipe::GetSprites( ) const
+	const std::vector<sf::Sprite>& Pipe::GetSprites() const
 	{
 		return pipeSprites;
+	}
+
+	std::vector<sf::Sprite>& Pipe::GetScoringSprites()
+	{
+		return scoringPipes;
 	}
 
 }
