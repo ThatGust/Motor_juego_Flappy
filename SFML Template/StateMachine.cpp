@@ -48,7 +48,7 @@ namespace Flappy
 			this->_isAdding = false;
 		}
 	}
-	
+
 	StateRef& StateMachine::GetActiveState() {
 		return this->_states.top();
 	}

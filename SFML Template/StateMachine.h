@@ -10,7 +10,7 @@ namespace Flappy {
 	typedef unique_ptr<State> StateRef;
 	//Maneja todo lo que esta corriendo
 	class StateMachine {
-	
+
 	public:
 		StateMachine() {}
 		~StateMachine() {}
@@ -20,7 +20,7 @@ namespace Flappy {
 
 		void ProcessStateChanges();
 
-		StateRef &GetActiveState();
+		StateRef& GetActiveState();
 	private:
 		stack<StateRef> _states;
 		StateRef _newState{};
@@ -28,6 +28,6 @@ namespace Flappy {
 		bool _isRemoving = true;
 		bool _isAdding = true;
 		bool _isReplacing = true;
-		
+
 	};
 }
