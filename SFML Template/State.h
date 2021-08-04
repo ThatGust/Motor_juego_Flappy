@@ -1,9 +1,10 @@
 #pragma once
-namespace Flappy
+namespace Flappy  // bloque que asocia todas las funciones
 {
-	class State
+	class State //clase estado
 	{
 	public:
+	//polimorfismo: otrtas clases accederan a estas funciones.
 		//Inicializa el state
 		virtual void Init() = 0;
 		//Maneja los inputs en el state

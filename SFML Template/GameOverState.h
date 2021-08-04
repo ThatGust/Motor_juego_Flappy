@@ -24,6 +24,7 @@ namespace Flappy
 		Sprite _gameOverTitle;
 		Sprite _gameOverContainer;
 		Sprite _retryButton;
+		Sprite _retryButtonTwo;
 
 		Text _scoreText;
 		Text _highScoreText;

@@ -15,67 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="StateMachine.h">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="StateMachine.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="AssetManager.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Flash.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOverState.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Land.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuState.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Pipe.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="SplashState.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Virus.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="State.h">
-      <Filter>Archivos de origen</Filter>
-    </ClInclude>
-    <ClInclude Include="AssetManager.h">
-      <Filter>Archivos de origen</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Land.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="Pipe.h">
       <Filter>Archivos de origen</Filter>
@@ -83,7 +30,16 @@
     <ClInclude Include="SplashState.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
     <ClInclude Include="Virus.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
@@ -95,6 +51,9 @@
     <ClInclude Include="Flash.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
     <ClInclude Include="GameOverState.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
@@ -104,11 +63,64 @@
     <ClInclude Include="HUD.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
-    <ClInclude Include="Land.h">
+    <ClInclude Include="GameStateTwo.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuState.h">
+    <ClInclude Include="PipeTwo.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Land.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipe.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Virus.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverState.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateTwo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="PipeTwo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -4,10 +4,10 @@
 namespace Flappy {
 	Game::Game(int width, int height, string title)
 	{
-		_data->window.create(VideoMode(width, height),
+		_data->window.create(VideoMode(width, height), //crea una ventana con las dimenciones dadas
 			title, Style::Close | Style::Titlebar);
 		//Aqui menu del juego
-		//Error despues de compilar
+		//						//state  //splashstate	//struc gamedata
 		_data->machine.AddState(StateRef(new SplashState(this->_data)));
 
 

@@ -3,6 +3,7 @@
 #include "GameOverState.h"
 #include "DEFINITIONS.h"
 #include "GameState.h"
+#include "GameStateTwo.h"
 
 
 #include <iostream>
@@ -28,14 +29,19 @@ namespace Flappy
 
 		_retryButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 
+		_retryButtonTwo.setTexture(this->_data->assets.GetTexture("Play Button Two"));
+
 		_gameOverContainer.setPosition((_data->window.getSize().x / 2) - (_gameOverContainer.getGlobalBounds().width / 2), (_data->window.
 			getSize().y / 2) - (_gameOverContainer.getGlobalBounds().height / 2 ));
 
 		_gameOverTitle.setPosition((_data->window.getSize().x / 3) - (_gameOverContainer.getGlobalBounds().width / 2), _gameOverContainer.
 			getPosition().y - (_gameOverContainer.getGlobalBounds().height * 1.2));
 
-		_retryButton.setPosition((_data->window.getSize().x / 2) - (_retryButton.getGlobalBounds().width / 2), _gameOverContainer.
+		_retryButton.setPosition((_data->window.getSize().x / 4) - (_retryButton.getGlobalBounds().width / 2), _gameOverContainer.
 			getPosition().y + _gameOverContainer.getGlobalBounds().height + (_retryButton.getGlobalBounds().height * 0.2));
+
+		_retryButtonTwo.setPosition((_data->window.getSize().x / 1.35) - (_retryButtonTwo.getGlobalBounds().width / 2), _gameOverContainer.
+			getPosition().y + _gameOverContainer.getGlobalBounds().height + (_retryButtonTwo.getGlobalBounds().height * 0.2));
 
 
 		_scoreText.setFont(_data->assets.GetFont("Flappy Font"));
@@ -72,6 +78,9 @@ namespace Flappy
 			if (_data->input.IsSpriteClicked(_retryButton, sf::Mouse::Left, _data->window)) {
 				_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
+			if (_data->input.IsSpriteClicked(_retryButtonTwo, sf::Mouse::Left, _data->window)) {
+				_data->machine.AddState(StateRef(new GameStateTwo(_data)), true);
+			}
 		}
 	}
 
@@ -89,6 +98,7 @@ namespace Flappy
 		_data->window.draw(_gameOverTitle);
 		_data->window.draw(_gameOverContainer);
 		_data->window.draw(_retryButton);
+		_data->window.draw(_retryButtonTwo);
 
 		_data->window.draw(_scoreText);
 		//_data->window.draw(_highScoreText);

@@ -6,6 +6,7 @@
 
 namespace Flappy
 {
+	//herecia de STATE
 	class MainMenuState : public State
 	{
 	public:

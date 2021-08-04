@@ -9,12 +9,16 @@
 #define MAIN_MENU_BACKGROUND_FILEPATH "res/img/sky1.png"
 #define GAME_BACKGROUND_FILEPATH "res/img/sky.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "res/img/sky.png"
+#define GAME_TWO_BACKGROUND_FILEPATH "res/img/skyTwo.png"
 
 #define GAME_TITLE_FILEPATH "res/img/title.png"
 #define PLAY_BUTTON_FILEPATH "res/img/PlayButton.png"
+#define PLAY_BUTTON_TWO_FILEPATH "res/img/PlayButtonTwo.png"
 
 #define PIPE_UP_FILEPATH "res/img/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "res/img/PipeDown.png"
+#define PIPE_UP_TWO_FILEPATH "res/img/PipeUpTwo.png"
+#define PIPE_DOWN_TWO_FILEPATH "res/img/PipeDownTwo.png"
 
 #define SCORING_PIPE_FILEPATH "res/img/InvisibleScoringPipe.png"
 
@@ -45,7 +49,9 @@
 
 
 #define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_TWO_MOVEMENT_SPEED 600.0f
 #define PIPE_SPAWN_FRECUENCY 2.5f       // A menor valor, pipes aparecen más juntos
+#define PIPE_TWO_SPAWN_FRECUENCY 0.50f   
 
 #define VIRUS_ANIMATION_DURATION 0.7f  // Variar para lograr una mejor animation del virus
 

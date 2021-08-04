@@ -21,6 +21,7 @@ namespace Flappy
 		_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
 		_data->assets.LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
+		_data->assets.LoadTexture("Play Button Two", PLAY_BUTTON_TWO_FILEPATH);
 
 		_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"));
 		_title.setTexture(this->_data->assets.GetTexture("Game Title"));

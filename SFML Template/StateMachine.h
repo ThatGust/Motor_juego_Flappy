@@ -16,6 +16,7 @@ namespace Flappy {
 		~StateMachine() {}
 		//Reemplaza estados de manera dinamica
 		void AddState(StateRef newState, bool isReplacing = true);
+		//remueve estados
 		void RemoveState();
 
 		void ProcessStateChanges();

@@ -6,10 +6,11 @@
 #include "Game.h"
 
 namespace Flappy
-{
+{//herencia de STATE
 	class SplashState : public State
 	{
 	public:
+		//constructor
 		SplashState(GameDataRef data);
 
 		void Init();
