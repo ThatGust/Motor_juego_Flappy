@@ -49,7 +49,7 @@ namespace Flappy
 
 		flash = new Flash(_data);
 
-		hud = new HUD( _data );
+		hud = new HUD(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
@@ -74,11 +74,7 @@ namespace Flappy
 
 			if (this->_data->input.IsSpriteClicked(this->_background, sf::Mouse::Left, this->_data->window))
 			{
-				// Estas 3 lineas ya no estan en el codigo que aparece en 
-				// el video 18, minuto 9:34
-				// pipe->SpawnInvisiblePipe();
-				// pipe->SpawnBottomPipe();
-				// pipe->SpawnTopPipe();
+
 
 				if (GameStates::eGameOver != _gameState)
 				{
